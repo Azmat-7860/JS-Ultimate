@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Accessing Element chapter 1</title>
+    <style>
+        .topic {
+            display: flex;
+            column-gap: 10px;
+            overflow: auto;
+            margin-bottom: 10px;
+        }
+
+        .topic::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, Edge */
+        }
+
+        #display-box {
+            min-height: 100px;
+            border: 1px solid #ccc;
+
+        }
+
+        #traverse-display {
+            min-height: 100px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+
+        .topic-Name {
+            padding: 2px 4px;
+            border: 1px solid;
+            border-radius: 5px;
+        }
+
+        #mdfy-box {
+            background-color: aqua;
+        }
+
+        .evnt-sec {
+            background-color: #6c757d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-sec container" id="heroSectionId">
+        <h1 class=" myHeading bg-info p-2 m-2 text-center fw-bold text-white" id="myHeadingId">Accessing the Element
+            chapter 1</h1>
+        <p class=" myParagraph text-center" id="myParagraphId">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Natus alias quae excepturi perspiciatis nihil aut nam explicabo dolor, ullam, ducimus quo est fugiat,
+            pariatur rem!</p>
+        <p class=" myParagraph text-center" id="myParagraphId2">Lorem, ipsum dolor sit amet consectetur adipisicing
+            elit. Repudiandae optio quaerat quos hic tempora molestias alias consequatur nulla deleniti sequi soluta
+            officiis, ab omnis illo!</p>
+
+        <div class="content-box border border-1 rounded-3 border-info p-3">
+            <div class="topic ">
+                <button onclick="PrintMe( 'getElementById')" class="topic-Name fw-bold"
+                    id="getElementById">.getElementById </button>
+                <button onclick="PrintMe(this.id )" class="topic-Name fw-bold"
+                    id="getElementsByClassName">.getElementByClassName </button>
+                <button onclick="PrintMe(this.id )" class="topic-Name fw-bold"
+                    id="getElementsByTagName">.getElementTagName</button>
+                <button onclick="PrintMe(this.id )" class="topic-Name fw-bold"
+                    id="getQuerySelector">.getQuerySelector</button>
+                <button onclick="PrintMe(this.id )" class="topic-Name fw-bold"
+                    id="getQuerySelectorAll">.getQuerySelectorAll </button>
+            </div>
+            <div id="display-box">
+            </div>
+        </div>
+        <div id="mdfy-box" class="modify-sec text-center mt-3 bg-gradient  p-2 rounded-3">
+            <h1 class="fs-2 text-white ">Modify Properties</h1>
+        </div>
+        <div class=" text-center p-2">
+            <button type="button" onclick="ModifyMe(this.id)" id="mdfy" class="m-1 btn btn-outline-info fw-bold">Change
+                bg.</button>
+            <button type="button" onclick="ModifyMe(this.id)" id="change-text"
+                class="m-1 btn btn-outline-warning fw-bold">Change Text</button>
+            <button type="button" onclick="ModifyMe(this.id)" id="add-div"
+                class="m-1 btn btn-outline-success fw-bold">Add Div</button>
+            <button type="button" onclick="ModifyMe(this.id)" id="remove-div"
+                class="m-1 btn btn-outline-danger fw-bold">Remove Div</button>
+        </div>
+
+        <div id="evnt-box" class="evnt-sec text-center mt-3 p-2 rounded-3">
+            <h1 class="fs-2 text-white ">Event Listener</h1>
+        </div>
+        <form action="" class="text-center p-2" id="formId">
+            <input type="text" required class="form-control m-2" placeholder="Enter your name" id="nameInput">
+            <button type="submit" class="btn btn-outline-primary fw-bold">Submit</button>
+        </form>
+
+        <div class="container text-center p-2 border border-info rounded-2" >
+            <div id="evnt-box" class="evnt-sec text-center mt-3 p-2 rounded-3">
+                <h1 class="fs-2 text-white ">Traverse DOM tree</h1>
+            </div>
+
+
+            <div id="traverse-boox">
+                <h1>Thid is First child</h1>
+                <p> This is sibling of First child </p>
+            </div>
+            <div class="text-center p-2">
+                <button type="button" onclick="TraverseMe(this.id)" id="traverseParent"
+                    class="m-1 btn btn-outline-warning fw-bold">Traverse Parent</button>
+                <button type="button" onclick="TraverseMe(this.id)" id="traverseChild"
+                    class="m-1 btn btn-outline-success fw-bold">Traverse Child</button>
+                <button type="button" onclick="TraverseMe(this.id)" id="traverseSibling"
+                    class="m-1 btn btn-outline-danger fw-bold">Traverse Sibling</button>
+                <div id="traverse-display">
+                </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+<script src="./DOM01-AccessingElement.js"></script>
+<script src="./DOM02-ModifyProperties.js"></script>
+<script src="./DOM03-EventListener.js"></script>
+<script src="./DOM04-TraverseDOM.js"></script>
+
+</html>
