@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Practice</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background: rgb(35, 131, 163);
+            margin: auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body style="background-color: beige; text-align: center; height: 100vh; ">
+    <button id="btn"> Open Alert</button>
+    <h3 class="demo" id="text1">This is demo text 01</h3>
+    <h3 class="demo" id="text2">This is demo text 02</h3>
+    <h3 class="demo" id="text3">This is demo text 03</h3>
+    <button id="btn1">Change Text</button>
+    <button id="btn2">Hide Text</button>
+    <button id="btn3">Toggle</button>
+    <div id="box">Hello jQuery</div>
+
+    <button id="fadein">Fade Out</button>
+    <button id="slideup">Slide Down</button>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(() => {
+        //=========================================
+        $("#btn").click(() => {
+            alert("Hello Boss how may i help you..")
+        });// btn close
+        //=========================================
+
+        $(".demo").hover(// take 2 parameter 
+            function () { //1.mouse enter
+                $(this).css("color", "red");
+            },
+            () => {//2.mouse leave
+                $(event.target).css("color", "black"); // arrow func doesnt have this 
+            }
+        )
+        //=========================================
+        $("#btn1").click(() => {
+            $("#text1").text("Hello Jquery Agent.")
+        });
+        //=========================================
+
+        $("#btn2").click(() => {
+            $("#text2").hide();
+        });
+
+        //=========================================
+
+        $("#btn3").click(() => {
+            $("#text3").toggle();// show and hide toggle
+        });
+        //=========================================
+        $("#fadein").click(() => {
+      $("#box").fadeOut(1000);
+    });
+
+    $("#slideup").click(() => {
+      $("#box").slideDown(1000);
+    });
+        console.log("program is ready to develop.");
+
+    });
+</script>
+
+</html>
